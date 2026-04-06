@@ -1,0 +1,19 @@
+/* Application Stylesheet */
+
+:root {
+    --primary-color: #0066cc;
+    --secondary-color: #ff9900;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+}
