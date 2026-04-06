@@ -10,6 +10,25 @@ class skintype extends Model
     protected $table = 'skintype';
     protected $primaryKey = 'id_skintype';
     public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected $fillable = [
+        'id_skintype', 'skintype_name', 'sensitive', 'combination',
+        'oily', 'dry', 'normal', 'description'
+    ];
+
+    protected $casts = [
+        'sensitive' => 'boolean',
+        'combination' => 'boolean',
+        'oily' => 'boolean',
+        'dry' => 'boolean',
+        'normal' => 'boolean',
+    ];
+
+    public function products()
+    {
+        return $this->hasMany(product::class, 'id_skintype', 'id_skintype');
+    }
 
     public function toArray()
     {

@@ -19,5 +19,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Load CSV data
+        $this->call(ProductDataSeeder::class);
     }
 }

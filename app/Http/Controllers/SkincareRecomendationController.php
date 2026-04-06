@@ -17,7 +17,7 @@ class SkincareRecomendationController extends Controller
         $productType = $request->input('product');
         $skinTypes = $request->input('skinType', []);
         $skinProblems = $request->input('skinProblem', []);
-        $notableEffects = []; // Tambahkan ini sesuai dengan kebutuhan Anda jika ada input dari user
+        $notableEffects = $request->input('effect', []); // Get effects from the form input
 
         $recommendedProducts = $this->skinrec->recommendSkincare($productType, $skinTypes, $skinProblems, $notableEffects);
 

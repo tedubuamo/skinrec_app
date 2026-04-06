@@ -11,6 +11,14 @@ class brand extends Model
     protected $table = 'brand';
     protected $primaryKey = 'id_brand';
     public $incrementing = false;
+    protected $keyType = 'string';
+
+    protected $fillable = ['id_brand', 'brand_name', 'description'];
+
+    public function products()
+    {
+        return $this->hasMany(product::class, 'id_brand', 'id_brand');
+    }
 
     public function toArray()
     {
@@ -18,6 +26,8 @@ class brand extends Model
         $array['id_brand'] = (string) $array['id_brand']; // Konversi id_brand menjadi string
         return $array;
     }
+
+    use HasFactory;
 
     use HasFactory;
 }
